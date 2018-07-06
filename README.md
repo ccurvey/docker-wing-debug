@@ -1,4 +1,6 @@
-GETTING REMOTE WING DEBUGGING WORKING WITH DOCKER
+**This is not working yet.  Still under development.**
+
+# GETTING REMOTE WING DEBUGGING WORKING WITH DOCKER
 
 1. Set your WINGHOME environment variable so that we don't break our local development
    environment.  Might want to put this in .bashrc, .profile, etc.
