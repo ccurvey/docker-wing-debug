@@ -1,0 +1,27 @@
+# start with a vanilla image
+FROM ubuntu:latest
+
+# install python
+RUN apt-get update
+RUN apt-get install -y \
+  python \
+  telnet \
+  iputils-ping
+
+ADD . /opt/myapp
+
+RUN useradd -m myuser
+RUN chown -R myuser:myuser /opt/myapp
+USER myuser
+WORKDIR /opt/myapp
+
+###############################################################################
+# expand the wing debugging code.
+RUN tar -xjf wingide-debugger-x86_64-linux-6.0.12-1.tar.bz2 --overwrite
+ENV WINGHOME /opt/myapp/wingide-debugger-x86_64-linux-6.0.12-1
+
+################################################################################
+# lets do this!
+WORKDIR /opt/myapp
+
+CMD python debugger_test.py
