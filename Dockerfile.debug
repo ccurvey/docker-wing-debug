@@ -4,9 +4,7 @@ FROM ubuntu:latest
 # install python
 RUN apt-get update
 RUN apt-get install -y \
-  python \
-  telnet \
-  iputils-ping
+  python
 
 ADD . /opt/myapp
 
