@@ -11,3 +11,7 @@ print("IP Address = ", get_ip_address())
 import wingdbstub
 # set your breakpoint on the next line
 print("Stop at this breakpoint!")
+
+with open('/tmp/wing-docker-debug.log', 'r') as logfile:
+    for line in logfile:
+        print line,
