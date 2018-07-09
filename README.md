@@ -60,9 +60,8 @@
    do this is different on Linux/Unix vs Mac/Windows.
 
    LINUX
-       a. Use "ip a" to find your addresses.  You'll have to pick out
-             which one you are using.  It should be a four-part number, like
-             192.16.1.205
+       a. Use "ip a" to find your addresses.  Find the "docker0" section, and
+          get the IP address from there.  It is probably 172.17.0.1
        b. In your copy of wingdbstub.py, around line 63, make
 
           kWingHostPort = '<ip-address-from-prior-step>:50005'
@@ -77,5 +76,4 @@
 
    $ docker build -t wing-docker-debug -f Dockerfile.debug . --no-cache
 
-Hints:  If you get stuck, you can examine the state of your docker container by doing this:
 
