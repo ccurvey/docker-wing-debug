@@ -2,13 +2,13 @@
 
 # GETTING REMOTE WING DEBUGGING WORKING WITH DOCKER
 
-1. Set your WINGHOME environment variable so that we don't break our local development
-   environment.  Might want to put this in .bashrc, .profile, etc.
+1. Set your WINGHOME environment variable so that we don't break our local
+   development environment.  Might want to put this in .bashrc, .profile, etc.
 
    $ WINGHOME=/usr/lib/wingide6 ; export WINGHOME
 
-2. Copy your wingdbstub.py from the Wing directory to your working directory.  (You will
-   need a real copy, not a symlink.)
+2. Copy your wingdbstub.py from the Wing directory to your working directory.
+   (You will need a real copy, not a symlink.)
 
    $ cp /usr/lib/wingide6/wingdbstub.py .
 
@@ -52,7 +52,7 @@
    c. Use our IP address again for the "RemoteIP Address"
    d. Choose "Specify mapping".
    e. Hit "Insert"
-   f: "Remote" should be "/opt/webapp" (no quotes)
+   f: "Remote" should be "/opt/myapp" (no quotes)
    g: "Local" should be the path to your working directory (e.g. /home/chris...)
    h: Hit "OK" on all the dialogs to close and save them
 
@@ -76,4 +76,6 @@
 
    $ docker build -t wing-docker-debug -f Dockerfile.debug . --no-cache
 
+9. Make sure you still have your breakpoint set in Wing, take a deep breath,
+   and try it out!
 
